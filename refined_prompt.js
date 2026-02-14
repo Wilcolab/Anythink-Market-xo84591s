@@ -9,11 +9,11 @@
  * - Non-alphanumeric character removal
  * - Input validation with descriptive error messages
  * 
- * @module stringCaseConverters
+ * @module refined_prompt
  * @version 1.0.0
  * 
  * @example
- * const { toCamelCase, toDotCase } = require('./stringCaseConverters');
+ * const { toCamelCase, toDotCase } = require('./refined_prompt');
  * 
  * toCamelCase("hello-world_example") // "helloWorldExample"
  * toDotCase("hello world example")   // "hello.world.example"
