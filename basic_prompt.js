@@ -15,5 +15,35 @@
  * toCamelCase("HELLO WORLD")        // "helloWorld"
  */
 function toCamelCase(str) {
-    // TODO: Implement the function
+    if (typeof str !== 'string') {
+        str = String(str);
+    }
+
+    const trimmed = str.trim();
+    if (trimmed === '') {
+        return '';
+    }
+
+    // Split on spaces, hyphens, or underscores and remove empty segments
+    const parts = trimmed
+        .split(/[ \-_]+/)
+        .filter(segment => segment.length > 0);
+
+    if (parts.length === 0) {
+        return '';
+    }
+
+    const [first, ...rest] = parts;
+    const firstPart = first.toLowerCase();
+
+    const camelCased =
+        firstPart +
+        rest
+            .map(part => {
+                const lower = part.toLowerCase();
+                return lower.charAt(0).toUpperCase() + lower.slice(1);
+            })
+            .join('');
+
+    return camelCased;
 }
