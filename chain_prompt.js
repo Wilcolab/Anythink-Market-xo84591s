@@ -14,7 +14,11 @@
 function toKebabCase(input) {
     // Step 1: Validate the input
     if (input === null || input === undefined || typeof input !== 'string') {
-        throw new TypeError(`Expected a string, but received ${typeof input}.`);
+        throw new TypeError(
+            `Expected a string, but received ${
+                input === null ? 'null' : input === undefined ? 'undefined' : typeof input
+            }.`
+        );
     }
 
     // Step 2: Normalize and clean the string
