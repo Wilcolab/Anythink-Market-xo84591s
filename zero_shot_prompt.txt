@@ -4,5 +4,3 @@ function toSnakeCase(text) {
         .replace(/[\s\-]+/g, '_')
         .toLowerCase();
 }
-
-module.exports = toSnakeCase;
